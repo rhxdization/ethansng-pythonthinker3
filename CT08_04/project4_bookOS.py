@@ -62,6 +62,16 @@ if yn == "y":
         print("You dont have enough money.")
 else:
     print("Ok")
+
+
+# suggestions
+# instead of using the method you use previously, do the below challenge
+# this is to let use get use of the nested dictionary.
+## Challenge 1: Track Quantities of Items
+# Allow the customer to specify how many of each item they want to buy.​
+# Store both the item and quantity in a nested dictionary.​
+# - purchases = ​{"Notebook": {"quantity": 2, "cost": 5.00}}​
+# Calculate the total cost based on quantities.
             
             
         

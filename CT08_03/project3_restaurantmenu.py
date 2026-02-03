@@ -11,6 +11,18 @@ menu = {
 order = {
 
 }
+
+# need to write the code here for the task 1: suggested output below
+# Welcome to HanBaoBao!
+
+# Here’s our menu: 
+# Cheeseburger: $5.50 
+# Fries: $3.00 
+# Coke: $2.00 
+# Ice Cream: $4.00 
+# Nuggets: $6.00
+
+
 money = 20
 totalcost = 0
 
@@ -39,6 +51,7 @@ for i in order:
     item_cost = menu[i] * order[i]
     totalcost += item_cost
 print("---- Order Summary ---- ")
+# this is good showing the quantity and order
 for i in order:
     print(f" {i} x {order[i]}: ${menu[i] * order[i]}")
 print(f"----------------------- \n Total Cost: ${totalcost}")
@@ -60,3 +73,13 @@ if input == "y":
 
 # Your total bill is $10.50. Enjoy your meal!
 # https://www.w3schools.com/python/python_string_formatting.asp
+
+# how about doing one more challenge which let customer remove items
+# this is to practice the delete entry from dictionary
+# suggested output
+# What would you like to order? remove Fries
+# Fries has been removed from your order.
+
+# What would you like to order? remove Burger
+# Burger is not in your order.
+
