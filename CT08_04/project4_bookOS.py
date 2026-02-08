@@ -15,6 +15,8 @@ ordered = {
 wallet = 50
 
 print("Welcome to the Bookshop Ordering System (BOS)!\n")
+for i in inventory:
+    print(f"{i}: ${inventory[i]}")
 while True:
     order = input("What would you like to order? (type quit to quit, type items to see items): ")
     if order == "items":
