@@ -11,3 +11,10 @@ print(f"{a} + {b} = {functio(a,b)}")
 # Exercise 4: Function with a Return Value​
 
 # Define a function that calculates the area of a rectangle.
+
+
+
+
+num = int(input("input: "))
+for i in range(1, num+1):
+    print(str(i) * i)
