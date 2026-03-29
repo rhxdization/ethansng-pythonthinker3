@@ -2,6 +2,7 @@ import os
 
 filepath = os.getcwd()
 
+
 def menu():
     choice = 0
     while choice != "6":
@@ -21,8 +22,6 @@ def menu():
                     with open("tasks.txt", "w") as file:
                         file.write("My Task List")
                     print("Successfully overwriten")
-                    global counter
-                    counter = 1
                 else:
                     print("Overwrite cancelled")
                     continue
@@ -30,40 +29,35 @@ def menu():
                 with open("tasks.txt", "w") as file:
                     file.write("My Task List")
                     print("New task file written")
-                    counter = 1
         elif choice == "2":
             with open("tasks.txt", "r") as file:
                 lines = file.readlines()
-                for line in lines:
-                    print(line.strip())
+                for line in range(len(lines)):
+                    if line == 0:
+                        print(lines[line].strip())
+                    else:
+                        print(f"{line}: {lines[line].strip()}")
         elif choice == "3":
             task = input("Enter a new task: ")
             with open("tasks.txt", "a") as file:
-                file.write(f"\n{counter}: {task}")
-            counter += 1
+                file.write(f"\n{task}")
         elif choice == "4":
             with open("tasks.txt", "r") as file:
                 lines = file.readlines()
+                for line in range(len(lines)):
+                    if line > 0:
+                        print(f"{line}: {lines[line].strip()}")
+            delete = input("Enter the task number to delete: ")
+            with open("tasks.txt", "w") as file:
+                lines.pop(int(delete))
                 for line in lines:
-                    print(line.strip())
-                delete = int(input("Enter the task number to delete: "))
-                if not isinstance(delete, int):
-                    print("type an integer")
-                else:
-                    with open("tasks.txt", "r") as file:
-                        lines = file.readlines()
-                    lines = [line for line in lines if not line.startswith(f"{str(delete)}:")]
-                    with open("tasks.txt", "w") as file:
-                        counter = 1
-                        for line in lines:
-                            file.write(f"{counter}: {line}")
-                            counter += 1
-
+                    file.write(line)
         elif choice == "5":
             print("5")
         elif choice == "6":
             break
         else:
             print("type something")
+
 
 menu()
